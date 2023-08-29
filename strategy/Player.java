@@ -14,7 +14,7 @@ public class Player {
     }
 
     public void setDefenseBehavior() {
-
+        
     }
 
     public void setOffenseBehavior() {
@@ -22,7 +22,12 @@ public class Player {
     }
 
     public String play() {
-
+        // Check this...not confident
+        if (this.offense) {
+            return this.offenseBehavior.play();
+        } else {
+            return this.defenseBehavior.play();
+        }
     }
 
     public void turnover() {
@@ -30,6 +35,6 @@ public class Player {
     }
 
     public String toString() {
-        
+        return this.firstName + " " + this.lastName;
     }
 }
