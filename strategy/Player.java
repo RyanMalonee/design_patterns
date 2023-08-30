@@ -23,6 +23,8 @@ public class Player {
 
     public String play() {
         // Check this...not confident
+        this.setDefenseBehavior();
+        this.setOffenseBehavior();
         if (this.offense) {
             return this.offenseBehavior.play();
         } else if (this.defenseBehavior != null) {
