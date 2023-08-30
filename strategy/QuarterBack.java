@@ -5,19 +5,23 @@ import java.util.Random;
 public class QuarterBack extends Player {
     public QuarterBack(String firstName, String lastName, boolean offense) {
         super(firstName, lastName, offense);
-        this.setOffenseBehavior();
+        if(offense) {
+            this.setOffenseBehavior();
+        } else {
+            this.setDefenseBehavior();
+        }
     }
 
     public void setOffenseBehavior() {
         Random random = new Random();
         if (random.nextBoolean()) {
-            offenseBehavior = new RunBehavior();
+            this.offenseBehavior = new RunBehavior();
         } else {
-            offenseBehavior = new PassBehavior();
+            this.offenseBehavior = new PassBehavior();
         }
     }
 
     public void setDefenseBehavior() {
-        
+        this.defenseBehavior = null;
     }
 }

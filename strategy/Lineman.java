@@ -5,23 +5,23 @@ import java.util.Random;
 public class Lineman extends Player {
     public Lineman(String firstName, String lastName, boolean offense) {
         super(firstName, lastName, offense);
-        setDefenseBehavior();
-        setOffenseBehavior();
+        this.setDefenseBehavior();
+        this.setOffenseBehavior();
     }
 
     public void setDefenseBehavior() {
         Random random = new Random();
-        int behavior = random.nextInt(1,3);
-        if (behavior == 1) {
-            defenseBehavior = new BlockBehavior();
-        } else if (behavior == 2) {
-            defenseBehavior = new StripBehavior();
+        int behavior = random.nextInt(3);
+        if (behavior == 0) {
+            this.defenseBehavior = new BlockBehavior();
+        } else if (behavior == 1) {
+            this.defenseBehavior = new StripBehavior();
         } else {
-            defenseBehavior = new SackBehavior();
+            this.defenseBehavior = new SackBehavior();
         }
     }
 
     public void setOffenseBehavior() {
-        offenseBehavior = new OBlockBehavior();
+        this.offenseBehavior = new OBlockBehavior();
     }
 }

@@ -14,24 +14,31 @@ public class Player {
     }
 
     public void setDefenseBehavior() {
-        
+        this.defenseBehavior = defenseBehavior;
     }
 
     public void setOffenseBehavior() {
-
+        this.offenseBehavior = offenseBehavior;
     }
 
     public String play() {
         // Check this...not confident
         if (this.offense) {
             return this.offenseBehavior.play();
-        } else {
+        } else if (this.defenseBehavior != null) {
             return this.defenseBehavior.play();
+        } else {
+            return "not playing";
         }
     }
 
     public void turnover() {
-
+        this.offense = !this.offense;
+        if(this.offense) {
+            this.setOffenseBehavior();
+        } else {
+            this.setDefenseBehavior();
+        }
     }
 
     public String toString() {
