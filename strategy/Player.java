@@ -1,6 +1,6 @@
 package strategy;
 
-public class Player {
+public abstract class Player {
     private String firstName;
     private String lastName;
     private boolean offense;
@@ -13,20 +13,9 @@ public class Player {
         this.offense = offense;
     }
 
-    /*
-     * TODO CHECK THIS and maybe comment out the old code...
-     * if I am looking at this correctly it means that if for 
-     * some reason there was a player object (that wasn't a quarterback,
-     * lineman, or a receiver) that was created, it could have ANY of the
-     * Defense or offense behaviors.
-     */
-    public void setDefenseBehavior() {
-        this.defenseBehavior = defenseBehavior;
-    }
+    public abstract void setDefenseBehavior();
 
-    public void setOffenseBehavior() {
-        this.offenseBehavior = offenseBehavior;
-    }
+    public abstract void setOffenseBehavior();
 
     public String play() {
         this.setDefenseBehavior();

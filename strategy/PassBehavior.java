@@ -1,5 +1,5 @@
 package strategy;
-// I don't know if this can be here
+
 import java.util.Random;
 
 public class PassBehavior implements OffenseBehavior {

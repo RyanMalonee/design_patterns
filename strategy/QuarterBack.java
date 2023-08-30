@@ -1,5 +1,5 @@
 package strategy;
-// check to make sure we can do this...
+
 import java.util.Random;
 
 public class QuarterBack extends Player {
