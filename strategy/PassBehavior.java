@@ -5,7 +5,7 @@ import java.util.Random;
 public class PassBehavior implements OffenseBehavior {
     public String play() {
         Random random = new Random();
-        int play = random.nextInt(4);
+        int play = random.nextInt(5);
         if (play == 0) {
             return "throws a slant route";
         } else if (play == 1) {

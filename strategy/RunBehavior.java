@@ -4,7 +4,7 @@ import java.util.Random;
 public class RunBehavior implements OffenseBehavior{
     public String play() {
         Random random = new Random();
-        int play = random.nextInt(3);
+        int play = random.nextInt(4);
         if (play == 0) {
             return "runs a drive (up the gut)";
         } else if (play == 1) {
