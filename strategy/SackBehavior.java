@@ -1,7 +1,17 @@
 package strategy;
 
-public class SackBehavior implements DefenseBehavior{
-    public String play() {
-        return "Sack the quarterback";
-    }
+/**
+* Implements the DefenseBehavior interface by creating the SackBehavior.
+*
+* @author Ryan Malone
+*/
+public class SackBehavior implements DefenseBehavior {
+  /**
+   * When the SackBehavior is played, it returns a string with the sack play.
+   *
+   * @return a string describing the sack play
+   */
+  public String play() {
+    return "Sack the quarterback";
+  }
 }
