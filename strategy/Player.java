@@ -45,12 +45,12 @@ public abstract class Player {
    * @return A string with the behavior that was enacted by the player
    */
   public String play() {
-    this.setDefenseBehavior();
-    this.setOffenseBehavior();
-    if (this.offense) {
-      return this.offenseBehavior.play();
-    } else if (this.defenseBehavior != null) {
-      return this.defenseBehavior.play();
+    setDefenseBehavior();
+    setOffenseBehavior();
+    if (offense && offenseBehavior != null) {
+      return offenseBehavior.play();
+    } else if (!offense && defenseBehavior != null) {
+      return defenseBehavior.play();
     } else {
       return "not playing";
     }
@@ -60,11 +60,11 @@ public abstract class Player {
    * Changes the player's behavior from offense to defense (or vice versa).
    */
   public void turnover() {
-    this.offense = !this.offense;
-    if (this.offense) {
-      this.setOffenseBehavior();
+    offense = !offense;
+    if (offense) {
+      setOffenseBehavior();
     } else {
-      this.setDefenseBehavior();
+      setDefenseBehavior();
     }
   }
 
